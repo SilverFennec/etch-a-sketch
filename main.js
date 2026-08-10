@@ -4,6 +4,13 @@ const log = document.querySelector('.log')
 
 let sides = 16;
 
+const colorSelection = document.querySelector('#colorSelection')
+let selectedColor = "yellow" 
+  
+colorSelection.addEventListener('change', (event) => 
+  selectedColor = event.target.value
+)
+
 function generateGrid(sides) {
   for (let i = 0; i < sides; i++) {
     for (let j = 0; j < sides; j++) {
@@ -18,7 +25,8 @@ function generateGrid(sides) {
   let squares = document.querySelectorAll('.squares')
   
   squares.forEach((squares) => {
-    squares.addEventListener('mouseenter', (event) => squares.style.backgroundColor = 'yellow')
+    squares.addEventListener('mouseenter', (event) => 
+      squares.style.backgroundColor = selectedColor) 
     }
   )
 }
